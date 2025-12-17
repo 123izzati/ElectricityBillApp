@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.LinearLayout;   // ✅ ADD THIS
+import android.widget.LinearLayout;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewTotalCharges, textViewFinalCost;
 
     private Button btnCalculate, btnSave;
-    private LinearLayout btnViewBills, btnAbout;   // ✅ CHANGED
+    private LinearLayout btnViewBills, btnAbout;
 
     private BillDatabaseHelper databaseHelper;
 
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
         btnCalculate = findViewById(R.id.btnCalculate);
         btnSave = findViewById(R.id.btnSave);
 
-        btnViewBills = findViewById(R.id.btnViewBills);   // ✅ LinearLayout
-        btnAbout = findViewById(R.id.btnAbout);           // ✅ LinearLayout
+        btnViewBills = findViewById(R.id.btnViewBills);
+        btnAbout = findViewById(R.id.btnAbout);
     }
 
     private void setupMonthSpinner() {
