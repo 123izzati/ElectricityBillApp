@@ -12,7 +12,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.LinearLayout;
-import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -121,9 +120,9 @@ public class MainActivity extends AppCompatActivity {
         totalCharges = calculateTariff(units);
         finalCost = totalCharges - (totalCharges * rebatePercentage);
 
-        DecimalFormat df = new DecimalFormat("0.00");
-        textViewTotalCharges.setText("Total Charges: RM " + df.format(totalCharges));
-        textViewFinalCost.setText("Final Cost: RM " + df.format(finalCost));
+        // SOLUTION 4: Use String.format instead of DecimalFormat
+        textViewTotalCharges.setText(String.format("Total Charges: RM %.2f", totalCharges));
+        textViewFinalCost.setText(String.format("Final Cost: RM %.2f", finalCost));
     }
 
     private double calculateTariff(double units) {
