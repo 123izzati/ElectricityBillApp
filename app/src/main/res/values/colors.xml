@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#2196F3</color>       <!-- Blue -->
+    <color name="colorPrimaryLight">#F0F8FF</color>  <!-- Light Blue -->
+    <color name="colorPrimaryDark">#1976D2</color>   <!-- Dark Blue -->
+    <color name="colorAccent">#FF9800</color>        <!-- Orange -->
+
+    <!-- Additional colors for your app -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#D3D3D3</color>
+
+    <!-- Custom colors for electricity bill app -->
+    <color name="colorLightBlue">#BCD4E6</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="red">#FF0000</color>
+    <color name="warning_red">#F44336</color>
+    <color name="bill_yellow">#FFC107</color>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ElectricityBillApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccent</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/black</item>
+
+        <!-- Button styles -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+
+        <!-- Action bar style -->
+        <item name="actionBarStyle">@style/Widget.App.ActionBar</item>
+    </style>
+
+    <!-- Custom button style -->
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Custom action bar style -->
+    <style name="Widget.App.ActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextStyle">@style/Widget.App.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <!-- Action bar title style -->
+    <style name="Widget.App.ActionBar.TitleTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

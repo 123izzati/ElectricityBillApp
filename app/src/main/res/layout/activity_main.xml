@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Electricity Bill Calculator"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/colorPrimary"/>
+
+        <!-- Month Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Month:" />
+
+        <Spinner
+            android:id="@+id/spinnerMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Units Input -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Units Used (kWh):"/>
+
+        <EditText
+            android:id="@+id/editTextUnits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Enter units"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Rebate Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rebate Percentage:"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupRebate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"/>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1%"/>
+
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2%"/>
+
+            <RadioButton
+                android:id="@+id/radio3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3%"/>
+
+            <RadioButton
+                android:id="@+id/radio4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4%"/>
+
+            <RadioButton
+                android:id="@+id/radio5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5%"/>
+        </RadioGroup>
+
+        <!-- Calculate Button -->
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate Bill"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Results -->
+        <TextView
+            android:id="@+id/textViewTotalCharges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Charges: RM 0.00"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/textViewFinalCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Final Cost: RM 0.00"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Bill"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- View Bills Button -->
+        <Button
+            android:id="@+id/btnViewBills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View All Bills"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- About Button -->
+        <Button
+            android:id="@+id/btnAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About"/>
+
+    </LinearLayout>
+</ScrollView>
