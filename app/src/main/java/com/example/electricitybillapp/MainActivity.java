@@ -11,14 +11,19 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.LinearLayout;   // ✅ ADD THIS
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
+
     private Spinner spinnerMonth;
     private EditText editTextUnits;
     private RadioGroup radioGroupRebate;
     private TextView textViewTotalCharges, textViewFinalCost;
-    private Button btnCalculate, btnSave, btnViewBills, btnAbout;
+
+    private Button btnCalculate, btnSave;
+    private LinearLayout btnViewBills, btnAbout;   // ✅ CHANGED
+
     private BillDatabaseHelper databaseHelper;
 
     private double totalCharges = 0;
@@ -32,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         initializeViews();
         setupMonthSpinner();
@@ -55,9 +59,8 @@ public class MainActivity extends AppCompatActivity {
         btnViewBills.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start ListActivity to view all bills
-                android.content.Intent intent = new android.content.Intent(
-                        MainActivity.this, ListActivity.class);
+                android.content.Intent intent =
+                        new android.content.Intent(MainActivity.this, ListActivity.class);
                 startActivity(intent);
             }
         });
@@ -65,9 +68,8 @@ public class MainActivity extends AppCompatActivity {
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Start AboutActivity
-                android.content.Intent intent = new android.content.Intent(
-                        MainActivity.this, AboutActivity.class);
+                android.content.Intent intent =
+                        new android.content.Intent(MainActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
         });
@@ -79,10 +81,12 @@ public class MainActivity extends AppCompatActivity {
         radioGroupRebate = findViewById(R.id.radioGroupRebate);
         textViewTotalCharges = findViewById(R.id.textViewTotalCharges);
         textViewFinalCost = findViewById(R.id.textViewFinalCost);
+
         btnCalculate = findViewById(R.id.btnCalculate);
         btnSave = findViewById(R.id.btnSave);
-        btnViewBills = findViewById(R.id.btnViewBills);
-        btnAbout = findViewById(R.id.btnAbout);
+
+        btnViewBills = findViewById(R.id.btnViewBills);   // ✅ LinearLayout
+        btnAbout = findViewById(R.id.btnAbout);           // ✅ LinearLayout
     }
 
     private void setupMonthSpinner() {
@@ -93,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculateBill() {
-        // Validate inputs
         if (editTextUnits.getText().toString().isEmpty()) {
             editTextUnits.setError("Please enter electricity units");
             return;
@@ -105,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Get rebate percentage
         int selectedId = radioGroupRebate.getCheckedRadioButtonId();
         if (selectedId == -1) {
             Toast.makeText(this, "Please select rebate percentage", Toast.LENGTH_SHORT).show();
@@ -116,25 +118,23 @@ public class MainActivity extends AppCompatActivity {
         String rebateText = selectedRadio.getText().toString();
         rebatePercentage = Double.parseDouble(rebateText.replace("%", "")) / 100;
 
-        // Calculate based on tariff blocks
         totalCharges = calculateTariff(units);
         finalCost = totalCharges - (totalCharges * rebatePercentage);
 
-        // Display results
         DecimalFormat df = new DecimalFormat("0.00");
         textViewTotalCharges.setText("Total Charges: RM " + df.format(totalCharges));
         textViewFinalCost.setText("Final Cost: RM " + df.format(finalCost));
     }
 
     private double calculateTariff(double units) {
-        double charges = 0;
+        double charges;
 
         if (units <= 200) {
             charges = units * 0.218;
         } else if (units <= 300) {
             charges = (200 * 0.218) + ((units - 200) * 0.334);
         } else if (units <= 600) {
-            charges = (200 * 0.218) + (100 * 0.334) + ((units - 200 - 100) * 0.516);
+            charges = (200 * 0.218) + (100 * 0.334) + ((units - 300) * 0.516);
         } else {
             charges = (200 * 0.218) + (100 * 0.334) + (300 * 0.516) + ((units - 600) * 0.546);
         }
@@ -156,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Bill saved successfully!", Toast.LENGTH_SHORT).show();
 
-        // Clear inputs
         editTextUnits.setText("");
         radioGroupRebate.clearCheck();
         textViewTotalCharges.setText("Total Charges: RM 0.00");
