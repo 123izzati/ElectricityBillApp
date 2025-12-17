@@ -10,8 +10,6 @@ import android.widget.Toast;
 import android.content.DialogInterface;
 import android.content.Intent;
 
-import java.text.DecimalFormat;
-
 public class DetailActivity extends AppCompatActivity {
     private TextView textViewMonth, textViewUnits, textViewRebate,
             textViewTotalCharges, textViewFinalCost;
@@ -31,13 +29,16 @@ public class DetailActivity extends AppCompatActivity {
         String[] details = dbHelper.getBillDetails(position);
 
         if (details[0] != null) {
-            DecimalFormat df = new DecimalFormat("0.00");
-
             textViewMonth.setText("Month: " + details[0]);
             textViewUnits.setText("Units Used: " + details[1] + " kWh");
             textViewRebate.setText("Rebate: " + details[2] + "%");
-            textViewTotalCharges.setText("Total Charges: RM " + df.format(Double.parseDouble(details[3])));
-            textViewFinalCost.setText("Final Cost: RM " + df.format(Double.parseDouble(details[4])));
+
+            // Use String.format instead of DecimalFormat for consistent rounding
+            double totalCharges = Double.parseDouble(details[3]);
+            double finalCost = Double.parseDouble(details[4]);
+
+            textViewTotalCharges.setText(String.format("Total Charges: RM %.2f", totalCharges));
+            textViewFinalCost.setText(String.format("Final Cost: RM %.2f", finalCost));
         }
 
         // Setup delete button functionality
