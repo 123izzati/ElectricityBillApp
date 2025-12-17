@@ -135,8 +135,10 @@ public class MainActivity extends AppCompatActivity {
             charges = (200 * 0.218) + ((units - 200) * 0.334);
         } else if (units <= 600) {
             charges = (200 * 0.218) + (100 * 0.334) + ((units - 300) * 0.516);
-        } else {
+        } else if (units <= 900) {
             charges = (200 * 0.218) + (100 * 0.334) + (300 * 0.516) + ((units - 600) * 0.546);
+        } else {
+            charges = (200 * 0.218) + (100 * 0.334) + (300 * 0.516) + (300 * 0.546) + ((units - 900) * 0.571);
         }
 
         return charges;
