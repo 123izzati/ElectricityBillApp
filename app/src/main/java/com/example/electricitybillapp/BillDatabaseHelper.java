@@ -90,22 +90,15 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<String> getAllBills() {
         ArrayList<String> billList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BILLS +
-                " ORDER BY " + COLUMN_MONTH + " ASC", null);
+        Cursor cursor = db.rawQuery("SELECT " + COLUMN_MONTH + ", " + COLUMN_FINAL_COST +
+                " FROM " + TABLE_BILLS + " ORDER BY " + COLUMN_MONTH + " ASC", null);
 
         if (cursor.moveToFirst()) {
             do {
-                String month = cursor.getString(1);
-                double units = cursor.getDouble(2);
-                double rebate = cursor.getDouble(3);
-                double totalCharges = cursor.getDouble(4);
-                double finalCost = cursor.getDouble(5);
+                String month = cursor.getString(0);
+                double finalCost = cursor.getDouble(1);
 
-                String display = month +
-                        " | Units: " + units +
-                        " | Rebate: " + rebate + "%" +
-                        " | Total: RM" + String.format("%.2f", totalCharges) +
-                        " | Final: RM" + String.format("%.2f", finalCost);
+                String display = month + " | Final: RM" + String.format("%.2f", finalCost);
                 billList.add(display);
             } while (cursor.moveToNext());
         }
