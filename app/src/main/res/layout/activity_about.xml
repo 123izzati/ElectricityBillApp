@@ -24,7 +24,7 @@
             android:layout_marginBottom="24dp"
             android:textColor="@color/colorPrimary"/>
 
-        <!-- ✅ STUDENT PHOTO/IMAGE CARD (ADDED HERE) -->
+        <!-- student photo -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
