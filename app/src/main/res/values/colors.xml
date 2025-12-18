@@ -14,8 +14,11 @@
 
     <!-- Custom colors for electricity bill app -->
     <color name="colorLightBlue">#BCD4E6</color>
+    <color name="teal_700">#00796B</color>
     <color name="colorGreen">#4CAF50</color>
     <color name="red">#FF0000</color>
     <color name="warning_red">#F44336</color>
     <color name="bill_yellow">#FFC107</color>
+    <color name="editTextBorder">#3F51B5</color>
+    <color name="editTextBackground">#FFFFFF</color>
 </resources>
