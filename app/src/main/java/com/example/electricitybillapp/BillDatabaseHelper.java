@@ -54,7 +54,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    // ✅ NEW METHOD: Get all months that already have bills
+    // Get all months that already have bills
     public List<String> getAllUsedMonths() {
         List<String> months = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -70,7 +70,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
         return months;
     }
 
-    // ✅ NEW METHOD: Check if a specific month already has a bill
+    // Check if a specific month already has a bill
     public boolean hasBillForMonth(String month) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_BILLS +
@@ -206,7 +206,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    // ✅ NEW METHOD: Get all bills with full details for display
+    // Get all bills with full details for display
     public ArrayList<Bill> getAllBillsDetailed() {
         ArrayList<Bill> billList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -230,7 +230,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
         return billList;
     }
 
-    // ✅ NEW METHOD: Update existing bill
+    // Update existing bill
     public boolean updateBill(int id, double units, double rebate,
                               double totalCharges, double finalCost) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -247,7 +247,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
         return rowsUpdated > 0;
     }
 
-    // ✅ NEW METHOD: Get bill by month
+    // Get bill by month
     public String[] getBillByMonth(String month) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_BILLS +
@@ -268,7 +268,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
         return details;
     }
 
-    // ✅ NEW METHOD: Clear all bills (for testing/reset)
+    //  Clear all bills (for testing/reset)
     public void clearAllBills() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_BILLS, null, null);
@@ -276,7 +276,7 @@ public class BillDatabaseHelper extends SQLiteOpenHelper {
     }
 }
 
-// ✅ NEW CLASS: Bill model for better data handling
+// Bill model for better data handling
 class Bill {
     private int id;
     private String month;
