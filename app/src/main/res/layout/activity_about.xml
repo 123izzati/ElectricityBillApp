@@ -23,6 +23,150 @@
             android:layout_marginBottom="24dp"
             android:textColor="@color/colorPrimary"/>
 
+        <!-- User Manual Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Card Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="#FFF3E0"
+                        android:gravity="center"
+                        android:text="📋"
+                        android:textSize="20sp"
+                        app:cornerRadius="18dp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="User Manual"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"/>
+                </LinearLayout>
+
+                <!-- Manual Content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="How to Use This App:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1. Select the month from the dropdown menu"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2. Enter the electricity units used (in kWh)"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="3. Choose rebate percentage (0% to 5%)"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="4. Click 'Calculate Bill' to see the results"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5. Click 'Save Bill' to store the calculation"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="15dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Electricity Tariff Rates:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• First 200 kWh: 21.8 sen/kWh (RM 0.218)"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Next 100 kWh (201-300): 33.4 sen/kWh (RM 0.334)"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Next 300 kWh (301-600): 51.6 sen/kWh (RM 0.516)"
+                        android:textSize="14sp"
+                        android:textColor="#555555"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Above 600 kWh: 54.6 sen/kWh (RM 0.546)"
+                        android:textSize="14sp"
+                        android:textColor="#555555"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- student photo -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"

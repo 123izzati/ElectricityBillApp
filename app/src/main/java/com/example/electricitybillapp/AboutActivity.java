@@ -20,7 +20,7 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://github.com/yourusername/ElectricityBillCalculator"));
+                        Uri.parse("https://github.com/123izzati/ElectricityBillCalculator"));
                 startActivity(browserIntent);
             }
         });
